@@ -44,10 +44,13 @@ h1 span {
   font-size: 1rem;
 }
 
+.menus {
+  width: 65%;
+}
+
 .buttonarray {
   display: flex;
   flex-wrap: wrap;
-  width: 60vw;
 }
 
 button {
@@ -74,8 +77,15 @@ button {
 
 .calendar {
   background-color: white;
-  max-width: 50vw;
+  padding: 2rem;
+  border-radius: 15px;
+  max-height: 75%;
+  max-width: 35%;
 }
 .calendar * {
   color: #4C4241;
+}
+
+.calendar button {
+  margin: auto;
 }

@@ -73,15 +73,19 @@ export default function Home() {
       <main>
         <h1>Mars Photos,</h1>
         <h1><span className="normy">taken by</span> {rover} <span className="normy">using</span> {camera}</h1>
-        <h2>Rover</h2>
-        <div className="buttonarray" style={{display:"flex"}}>
-          <button className="rover" onClick={() => setRover("Curiosity")}>Curiosity</button>
-          <button className="rover" onClick={() => setRover("Spirit")}>Spirit</button>
-          <button className="rover" onClick={() => setRover("Opportunity")}>Opportunity</button>
+        <div className="flex">
+          <div className="menus">
+            <h2>Rover</h2>
+            <div className="buttonarray" style={{display:"flex"}}>
+              <button className="rover" onClick={() => setRover("Curiosity")}>Curiosity</button>
+              <button className="rover" onClick={() => setRover("Spirit")}>Spirit</button>
+              <button className="rover" onClick={() => setRover("Opportunity")}>Opportunity</button>
+            </div>
+            <h3>Camera</h3>
+            <div className="buttonarray">{camerasmap}</div>
+          </div>
+          <Calendarsel onChange={onChange} value={date}/>
         </div>
-        <h3>Camera</h3>
-        <div className="buttonarray">{camerasmap}</div>
-        <Calendarsel onChange={onChange} value={date}/>
         <button className="submit" onClick={submit}>View photos</button>
           {loading ?
             <p>Loading...</p>

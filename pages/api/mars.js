@@ -20,7 +20,7 @@ const results = []
   }
     if (results.length <= 19){
       try {
-            const response = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${req.query.rover}/photos?sol=${req.query.formattedDate}&camera=${req.query.camera}&api_key=${API_KEY}`);
+            const response = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${req.query.rover}/photos?earth_date=${req.query.formattedDate}&camera=${req.query.camera}&api_key=${API_KEY}`);
             const photosdata = response.data.photos;
             for (const photosdatum of photosdata) {
               results.push(photosdatum);
