@@ -1,0 +1,54 @@
+[
+  {
+    "fullname":"Rover Up-Look Camera",
+    "acronym":"EDL_RUCAM"
+  },
+  {
+    "fullname":"Rover Up-Down Camera",
+    "acronym":"EDL_RDCAM"
+  },
+  {
+    "fullname":"Descent Stage Down-Look Camera",
+    "acronym":"EDL_DDCAM"
+  },
+  {
+    "fullname":"Parachute Up-Look Camera A",
+    "acronym":"EDL_PUCAM1"
+  },
+  {
+    "fullname":"Parachute Up-Look Camera B",
+    "acronym":"EDL_PUCAM2"
+  },
+  {
+    "fullname":"Navigation Camera - Left",
+    "acronym":"NAVCAM_LEFT"
+  },
+  {
+    "fullname":"Navigation Camera - Right",
+    "acronym":"NAVCAM_RIGHT"
+  },
+  {
+    "fullname":"Mast Camera Zoom - Right",
+    "acronym":"MCZ_RIGHT"
+  },
+  {
+    "fullname":"Mast Camera Zoom - Left",
+    "acronym":"MCZ_LEFT"
+  },
+  {
+    "fullname":"Front Hazard Avoidance Camera - Left",
+    "acronym":"FRONT_HAZCAM_LEFT_A"
+  },
+  {
+    "fullname":"Front Hazard Avoidance Camera - Right",
+    "acronym":"FRONT_HAZCAM_RIGHT_A"
+  },
+  {
+    "fullname":"Rear Hazard Avoidance Camera - Left",
+    "acronym":"REAR_HAZCAM_LEFT"
+  },
+  {
+    "fullname":"Rear Hazard Avoidance Camera - Right",
+    "acronym":"REAR_HAZCAM_RIGHT"
+  }
+]

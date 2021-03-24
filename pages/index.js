@@ -5,11 +5,11 @@ import queryString from "query-string";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import cameras from '../public/cameras.json';
+import percameras from '../public/percameras.json';
 import Calendarsel from "../components/calendarsel";
 import Calendar from 'react-calendar';
 
 var dateFormat = require("dateformat");
-
 
 export default function Home() {
   const [rover, setRover] = useState("Curiosity");
@@ -18,9 +18,21 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [nophotos, setNophotos] = useState("");
   const [date, onChange] = useState(new Date());
+  const [height, setHeight] = useState("fullheight");
+  const [camheight, setCamheight] = useState("fullheight");
+
 
   const formattedDate = dateFormat(date, "yyyy-mm-dd");
   console.log(formattedDate, rover, camera);
+
+    const toggleClass = () => {
+        var newHeight = (height ? "" : "fullheight");
+        setHeight(newHeight);
+    };
+    const toggleCam = () => {
+        var newcamHeight = (camheight ? "" : "fullheight");
+        setCamheight(newcamHeight);
+    };
 
     const submit = () => {
       setLoading(true);
@@ -45,8 +57,8 @@ export default function Home() {
     }
 
     const marsmap = mars.slice(0, 20).map((mar, index) =>
-      <div style={{height:"200px", display:"flex"}}>
-        <img style={{height:"100%"}} src={mar.img_src} />
+      <div style={{width: "65%", display:"flex"}}>
+        <img style={{width:"100%"}} src={mar.img_src} />
         <div>
           <p>{mar.sol}</p>
           <p>{mar.rover.name}</p>
@@ -61,6 +73,13 @@ export default function Home() {
       <button className="camera" onClick={() => setCamera(camera.acronym)}>{camera.fullname}</button>
     </div>
 )
+
+  const percamerasmap = percameras.map((percamera, index) =>
+    <div>
+      <button className="camera" onClick={() => setCamera(percamera.acronym)}>{percamera.fullname}</button>
+    </div>
+)
+
 
   return (
     <div className="all">
@@ -80,9 +99,17 @@ export default function Home() {
               <button className="rover" onClick={() => setRover("Curiosity")}>Curiosity</button>
               <button className="rover" onClick={() => setRover("Spirit")}>Spirit</button>
               <button className="rover" onClick={() => setRover("Opportunity")}>Opportunity</button>
+              <button className="rover" onClick={() => setRover("Perseverance")}>Perseverance</button>
             </div>
-            <h3>Camera</h3>
-            <div className="buttonarray">{camerasmap}</div>
+            <div className={height} id="pers">
+              <h3>Perserverance Cameras</h3>
+              <div className="buttonarray" >{percamerasmap}</div>
+            </div>
+            <div className={camheight} id="cam">
+              <h3>Camera</h3>
+              <div className="buttonarray">{camerasmap}</div>
+            </div>
+
           </div>
           <Calendarsel onChange={onChange} value={date}/>
         </div>
@@ -90,7 +117,7 @@ export default function Home() {
           {loading ?
             <p>Loading...</p>
             :
-            <div style={{display:"flex", flexWrap: "wrap", justifyContent: "space-between", width:"60vw"}}>
+            <div style={{display:"flex", flexWrap: "wrap", justifyContent: "space-between", width:"85vw"}}>
               {marsmap}
             </div>
           }

@@ -89,3 +89,13 @@ button {
 .calendar button {
   margin: auto;
 }
+
+#pers, #cam {
+  max-height: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fullheight {
+  max-height: 100% !important;
+}
